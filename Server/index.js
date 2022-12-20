@@ -16,5 +16,9 @@ app.use(express.urlencoded({ extended: false }));
 //cors
 app.use(cors());
 
+app.use("/graphql",graphqlHTTP({
+    
+}))
+
 //run server
 app.listen(PORT, () => console.log("Server running at the PORT " + PORT));
