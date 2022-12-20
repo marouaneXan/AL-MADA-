@@ -3,11 +3,10 @@ import ProductCard from "./ProductCard";
 
 const Products = () => {
   return (
-    <section>
+    <section className="flex flex-col items-center">
+      <h1 className="text-2xl font-semibold text-white">Products</h1>
       <div className="container flex flex-wrap justify-center py-[18.4px] gap-6 md:mx-auto md:justify-start md:px-[88px]">
-      <div className="w-[250px]  p-6 border-gray-200 dark:bg-gray-800 dark:border-gray-700 rounded-[25px]">
-        <ProductCard/>
-      </div>
+        <ProductCard />
       </div>
     </section>
   );

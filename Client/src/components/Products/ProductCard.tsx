@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 const ProductCard = () => {
   return (
-    <div className="flex flex-col items-center text-center mx-auto space-y-6">
+    <div className="w-[250px]  p-6 border-gray-200 dark:bg-gray-800 dark:border-gray-700 rounded-[25px]">
+        <div className="flex flex-col items-center text-center mx-auto space-y-6">
           <img
             // src={user.avatar_url}
             className="max-w-[76.6px] max-h-[76.6px] rounded-full"
@@ -11,7 +12,7 @@ const ProductCard = () => {
           />
           <div>
             <h5 className="mb-1 text-xl font-medium text-center text-gray-900 dark:text-white">
-              ejczke
+              {/* {user.login}zjkzaa */}azad
             </h5>
             <Link
               to=""
@@ -21,6 +22,7 @@ const ProductCard = () => {
             </Link>
           </div>
         </div>
+      </div>
   )
 }
 
