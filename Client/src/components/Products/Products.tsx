@@ -1,7 +1,21 @@
 import React from "react";
 import ProductCard from "./ProductCard";
+import {useQuery} from "@apollo/client"
+import { GET_PRODUCTS } from "../../Queries/Products";
+
+interface Product {
+    Brand_name:string
+    IPR:string
+    Status:string
+    Number:string
+    Office:string
+    Owner:string
+    Designation:string
+    Nice_classification:string
+}
 
 const Products = () => {
+    const {data}:any=useQuery(GET_PRODUCTS)
   return (
     <section className="flex flex-col items-center">
       <h1 className="text-2xl font-semibold text-white">Products</h1>
