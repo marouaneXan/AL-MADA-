@@ -10,7 +10,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="github logo"
-            className="rounded-full w-[50px] h-[50px] cursor-pointer"
+            className="rounded-full w-[100px] h-[100px] cursor-pointer"
           />
         </Link>
         {/* {location.pathname !== "/" ? (
