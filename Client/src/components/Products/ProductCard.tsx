@@ -1,18 +1,24 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { Product } from './Products';
+import shoes from "../../assets/shoes.jpg"
 
-const ProductCard = () => {
+interface ProductProps{
+    product:Product
+}
+
+const ProductCard = (props:ProductProps) => {
   return (
     <div className="w-[250px]  p-6 border-gray-200 dark:bg-gray-800 dark:border-gray-700 rounded-[25px]">
         <div className="flex flex-col items-center text-center mx-auto space-y-6">
           <img
-            // src={user.avatar_url}
+            src={shoes}
             className="max-w-[76.6px] max-h-[76.6px] rounded-full"
             alt="User image"
           />
           <div>
             <h5 className="mb-1 text-xl font-medium text-center text-gray-900 dark:text-white">
-              {/* {user.login}zjkzaa */}azad
+              {props.product.Brand_name}
             </h5>
             <Link
               to=""
