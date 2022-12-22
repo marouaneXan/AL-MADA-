@@ -2,6 +2,7 @@ import Products from "./components/Products/Products";
 import Navbar from "./components/layouts/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import ProductDetails from "./components/Products/ProductDetails";
 
 const client = new ApolloClient({
   uri: "http://localhost:5000/graphql",
@@ -16,6 +17,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Products />} />
+            <Route path="/product_id" element={<ProductDetails />} />
           </Routes>
         </div>
       </ApolloProvider>
