@@ -42,6 +42,41 @@ const RootQuery = new GraphQLObjectType({
   },
 });
 
+//Mutations
+const mutation = new GraphQLObjectType({
+  name: "Mutation",
+  fields: {
+    //Add product
+    addProduct: {
+      type: ProductType,
+      args: {
+        Brand_name: { type: GraphQLString },
+        IPR: { type: GraphQLString },
+        Status: { type: GraphQLString },
+        Number: { type: GraphQLString },
+        Office: { type: GraphQLString },
+        Owner: { type: GraphQLString },
+        Designation: { type: GraphQLString },
+        Nice_classification: { type: GraphQLString },
+      },
+      resolve(parent, args) {
+        const product = new Product({
+          Brand_name: { type: GraphQLString },
+          IPR: { type: GraphQLString },
+          Status: { type: GraphQLString },
+          Number: { type: GraphQLString },
+          Office: { type: GraphQLString },
+          Owner: { type: GraphQLString },
+          Designation: { type: GraphQLString },
+          Nice_classification: { type: GraphQLString },
+        });
+        return product.save();
+      },
+    },
+  },
+});
+
 module.exports = new GraphQLSchema({
   query: RootQuery,
+  mutation
 });
