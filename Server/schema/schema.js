@@ -73,6 +73,38 @@ const mutation = new GraphQLObjectType({
         return product.save();
       },
     },
+    //Update product
+    updateClient: {
+      type: ProductType,
+      args: {
+        Brand_name: { type: GraphQLString },
+        IPR: { type: GraphQLString },
+        Status: { type: GraphQLString },
+        Number: { type: GraphQLString },
+        Office: { type: GraphQLString },
+        Owner: { type: GraphQLString },
+        Designation: { type: GraphQLString },
+        Nice_classification: { type: GraphQLString },
+      },
+      resolve(parent, args) {
+        return Product.findByIdAndUpdate(
+          args.id,
+          {
+            $set: {
+              Brand_name: args.Brand_name,
+              IPR: args.IPR,
+              Status: args.Status,
+              Number: args.Number,
+              Office: args.Office,
+              Owner: args.Owner,
+              Designation: args.Designation,
+              Nice_classification: args.Nice_classification,
+            },
+          },
+          { new: true }
+        );
+      },
+    },
     //Delete product
     deleteProduct: {
       type: ProductType,
@@ -86,5 +118,5 @@ const mutation = new GraphQLObjectType({
 
 module.exports = new GraphQLSchema({
   query: RootQuery,
-  mutation
+  mutation,
 });
