@@ -4,8 +4,9 @@ const {
   GraphQLID,
   GraphQLString,
   GraphQLSchema,
-  GraphQLList,
+  GraphQLList
 } = require("graphql");
+const { GraphQLNonNull } = require('graphql');
 
 //Product Type
 const ProductType = new GraphQLObjectType({

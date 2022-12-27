@@ -20,12 +20,20 @@ const ProductCard = (props:ProductProps) => {
             <h5 className="mb-1 text-xl font-medium text-center text-gray-900 dark:text-white">
               {props.product.Brand_name}
             </h5>
+            <div className="flex space-x-2">
             <Link
               to=""
-              className="block items-center py-2 mt-3 px-4 w-28 mx-auto text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
+              className="block items-center py-2 mt-3 px-4  mx-auto text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
             >
-              Details
+              View
             </Link>
+            <Link
+              to=""
+              className="block items-center py-2 mt-3 px-4  mx-auto text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
+            >
+              Delete
+            </Link>
+            </div>
           </div>
         </div>
       </div>
