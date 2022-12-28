@@ -13,16 +13,12 @@ const Navbar = () => {
             className="rounded-full w-[100px] h-[100px] cursor-pointer"
           />
         </Link>
-        {/* {location.pathname !== "/" ? (
           <Link
-            to="/"
+            to="/add_product"
             className="block items-center py-2 mt-2 px-[18px] md:px-[38px] text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
           >
-            Back To Home
+            ADD PRODUCT
           </Link>
-        ) : (
-          <SearchUser/>
-        )} */}
       </div>
     </nav>
   );
