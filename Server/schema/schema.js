@@ -4,9 +4,9 @@ const {
   GraphQLID,
   GraphQLString,
   GraphQLSchema,
-  GraphQLList
+  GraphQLList,
 } = require("graphql");
-const { GraphQLNonNull } = require('graphql');
+const { GraphQLNonNull } = require("graphql");
 
 //Product Type
 const ProductType = new GraphQLObjectType({
@@ -61,17 +61,17 @@ const mutation = new GraphQLObjectType({
         Nice_classification: { type: GraphQLString },
       },
       resolve(parent, args) {
-        const product = new Product({
-          Brand_name: { type: GraphQLString },
-          IPR: { type: GraphQLString },
-          Status: { type: GraphQLString },
-          Number: { type: GraphQLString },
-          Office: { type: GraphQLString },
-          Owner: { type: GraphQLString },
-          Designation: { type: GraphQLString },
-          Nice_classification: { type: GraphQLString },
+        const newProduct = Product.create({
+          Brand_name: args.Brand_name,
+          IPR: args.IPR,
+          Status: args.Status,
+          Number: args.Number,
+          Office: args.Office,
+          Owner: args.Owner,
+          Designation: args.Designation ,
+          Nice_classification: args.Nice_classification,
         });
-        return product.save();
+        if (newProduct) return newProduct;
       },
     },
     //Update product
