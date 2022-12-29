@@ -1,6 +1,7 @@
 import React from "react";
 import TextField from "../Input/TextField";
 import { useFormik } from "formik";
+import { productSchema } from "../../Validation/Product";
 
 const AddProduct = () => {
   const values = {
@@ -15,10 +16,12 @@ const AddProduct = () => {
   };
   const formik = useFormik({
     initialValues: values,
+    validationSchema: productSchema,
     onSubmit: (values) => {
       console.log(values);
     },
   });
+  console.log(formik.errors);
   return (
     <div className="flex justify-center items-center md:inset-0 h-modal sm:h-full">
       <div className="relative px-4 w-full max-w-2xl h-full md:h-auto">
@@ -34,6 +37,9 @@ const AddProduct = () => {
                     label="Brand name"
                     handleChange={formik.handleChange}
                   />
+                  <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                    {(formik.errors.Brand_name && formik.touched.Brand_name) ? formik.errors.Brand_name : ""}
+                  </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
                   <TextField
@@ -43,6 +49,9 @@ const AddProduct = () => {
                     label="Designation"
                     handleChange={formik.handleChange}
                   />
+                  <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                    {(formik.errors.Designation && formik.touched.Designation) ? formik.errors.Designation : ""}
+                  </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
                   <TextField
@@ -52,6 +61,9 @@ const AddProduct = () => {
                     label="Number"
                     handleChange={formik.handleChange}
                   />
+                  <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                    {(formik.errors.Number && formik.touched.Number) ? formik.errors.Number : ""}
+                  </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
                   <TextField
@@ -61,6 +73,9 @@ const AddProduct = () => {
                     label="Office"
                     handleChange={formik.handleChange}
                   />
+                  <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                    {(formik.errors.Office && formik.touched.Office) ? formik.errors.Office : ""}
+                  </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
                   <TextField
@@ -70,6 +85,9 @@ const AddProduct = () => {
                     label="IPR"
                     handleChange={formik.handleChange}
                   />
+                  <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                    {(formik.errors.IPR && formik.touched.IPR) ? formik.errors.IPR : ""}
+                  </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
                   <TextField
@@ -79,6 +97,9 @@ const AddProduct = () => {
                     label="Owner"
                     handleChange={formik.handleChange}
                   />
+                  <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                    {(formik.errors.Owner && formik.touched.Owner) ? formik.errors.Owner : ""}
+                  </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
                   <TextField
@@ -88,15 +109,21 @@ const AddProduct = () => {
                     label="Status"
                     handleChange={formik.handleChange}
                   />
+                  <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                    {(formik.errors.Status && formik.touched.Status) ? formik.errors.Status : ""}
+                  </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
                   <TextField
-                    name="Nice_classificationx"
+                    name="Nice_classification"
                     type="text"
                     value={formik.values.Nice_classification}
                     label="Nice classification"
                     handleChange={formik.handleChange}
                   />
+                  <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+                    {(formik.errors.Nice_classification && formik.touched.Nice_classification) ? formik.errors.Nice_classification : ""}
+                  </span>
                 </div>
               </div>
             </div>

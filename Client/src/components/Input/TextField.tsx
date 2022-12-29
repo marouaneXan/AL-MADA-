@@ -23,8 +23,7 @@ const TextField = (props: Prop) => {
         name={props.name}
         type={props.type}
         className="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
-      />
-      <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1"></span>
+      />  
     </div>
   );
 };
