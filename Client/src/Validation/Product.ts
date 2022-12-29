@@ -1,5 +1,5 @@
 import * as yup from "yup";
-export const busSchema = yup.object().shape({
+export const productSchema = yup.object().shape({
     Brand_name: yup.string().required(),
     Designation: yup.string().required(),
     Number: yup.string().required(),
