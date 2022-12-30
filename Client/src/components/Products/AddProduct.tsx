@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import TextField from "../Input/TextField";
 import { useFormik } from "formik";
 import { productSchema } from "../../Validation/Product";
+import { ADD_PRODUCT } from "../../Mutations/Product";
+import { useMutation } from "@apollo/client";
+import { GET_PRODUCTS } from "../../Queries/Products";
+import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
+  const navigate = useNavigate();
   const values = {
     Brand_name: "",
     Designation: "",
@@ -17,13 +22,18 @@ const AddProduct = () => {
   const formik = useFormik({
     initialValues: values,
     validationSchema: productSchema,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: (obj) => {
+      addProduct({ variables: obj });
+      setTimeout(() => {
+        navigate("/");
+      }, 4000);
     },
   });
-  console.log(formik.errors);
+  const [addProduct]: any = useMutation(ADD_PRODUCT, {
+    refetchQueries: [{ query: GET_PRODUCTS }],
+  });
   return (
-    <div className="flex justify-center items-center md:inset-0 h-modal sm:h-full">
+    <div className="flex justify-center items-center md:inset-0">
       <div className="relative px-4 w-full max-w-2xl h-full md:h-auto">
         <div className=" bg-white rounded-2xl shadow-lg py-4">
           <form onSubmit={formik.handleSubmit} className="px-6 py-2 space-y-6">
@@ -38,7 +48,9 @@ const AddProduct = () => {
                     handleChange={formik.handleChange}
                   />
                   <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
-                    {(formik.errors.Brand_name && formik.touched.Brand_name) ? formik.errors.Brand_name : ""}
+                    {formik.errors.Brand_name && formik.touched.Brand_name
+                      ? formik.errors.Brand_name.split("_").join(" ")
+                      : ""}
                   </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -50,19 +62,23 @@ const AddProduct = () => {
                     handleChange={formik.handleChange}
                   />
                   <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
-                    {(formik.errors.Designation && formik.touched.Designation) ? formik.errors.Designation : ""}
+                    {formik.errors.Designation && formik.touched.Designation
+                      ? formik.errors.Designation
+                      : ""}
                   </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
                   <TextField
                     name="Number"
-                    type="number"
+                    type="text"
                     value={formik.values.Number}
                     label="Number"
                     handleChange={formik.handleChange}
                   />
                   <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
-                    {(formik.errors.Number && formik.touched.Number) ? formik.errors.Number : ""}
+                    {formik.errors.Number && formik.touched.Number
+                      ? formik.errors.Number
+                      : ""}
                   </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -74,7 +90,9 @@ const AddProduct = () => {
                     handleChange={formik.handleChange}
                   />
                   <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
-                    {(formik.errors.Office && formik.touched.Office) ? formik.errors.Office : ""}
+                    {formik.errors.Office && formik.touched.Office
+                      ? formik.errors.Office
+                      : ""}
                   </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -86,7 +104,9 @@ const AddProduct = () => {
                     handleChange={formik.handleChange}
                   />
                   <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
-                    {(formik.errors.IPR && formik.touched.IPR) ? formik.errors.IPR : ""}
+                    {formik.errors.IPR && formik.touched.IPR
+                      ? formik.errors.IPR
+                      : ""}
                   </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -98,7 +118,9 @@ const AddProduct = () => {
                     handleChange={formik.handleChange}
                   />
                   <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
-                    {(formik.errors.Owner && formik.touched.Owner) ? formik.errors.Owner : ""}
+                    {formik.errors.Owner && formik.touched.Owner
+                      ? formik.errors.Owner
+                      : ""}
                   </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -110,7 +132,9 @@ const AddProduct = () => {
                     handleChange={formik.handleChange}
                   />
                   <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
-                    {(formik.errors.Status && formik.touched.Status) ? formik.errors.Status : ""}
+                    {formik.errors.Status && formik.touched.Status
+                      ? formik.errors.Status
+                      : ""}
                   </span>
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -122,7 +146,10 @@ const AddProduct = () => {
                     handleChange={formik.handleChange}
                   />
                   <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
-                    {(formik.errors.Nice_classification && formik.touched.Nice_classification) ? formik.errors.Nice_classification : ""}
+                    {formik.errors.Nice_classification &&
+                    formik.touched.Nice_classification
+                      ? formik.errors.Nice_classification.split("_").join(" ")
+                      : ""}
                   </span>
                 </div>
               </div>

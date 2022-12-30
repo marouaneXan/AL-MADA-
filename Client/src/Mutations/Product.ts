@@ -9,23 +9,23 @@ const DELETE_PRODUCT = gql`
 const ADD_PRODUCT = gql`
   mutation addProduct(
     $Brand_name: String!
-    $Designation: String!
+    $Status: String!
     $Number: String!
     $Office: String!
-    $IPR: String!
     $Owner: String!
+    $Designation: String!
     $Nice_classification: String!
-    $Status: String!
+    $IPR: String!
   ) {
     addProduct(
       Brand_name: $Brand_name
-      Designation: $Designation
+      Status: $Status
       Number: $Number
       Office: $Office
-      IPR: $IPR
       Owner: $Owner
+      Designation: $Designation
       Nice_classification: $Nice_classification
-      Status: $Status
+      IPR: $IPR
     ) {
       id
     }
