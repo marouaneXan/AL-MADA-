@@ -13,7 +13,7 @@
 <p>To set up the project on your local machine, follow these steps </p>
 <ol>
   <li>Clone the repository to your local machine:
-    <pre><code>git clone https://github.com/your-username/project-name.git</code></pre>
+    <pre><code>git clone https://github.com/marouaneXan/project-name.git</code></pre>
   </li>
   <li>Navigate to the project directory:
     <pre><code>cd project-name</code></pre>
@@ -39,7 +39,7 @@
 <p>To use the project, follow these steps:</p>
 <ol>
   <li>Run the project in development mode (see above).</li>
-  <li>Open your web browser and navigate to http://localhost:3000.</li>
+  <li>Open your web browser and navigate to http://localhost:5000.</li>
 </ol>
 
 <h2>Deployment</h2>
