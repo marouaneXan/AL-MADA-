@@ -14,4 +14,18 @@ const GET_PRODUCTS = gql`
     }
   }
 `;
-export { GET_PRODUCTS };
+const GET_PRODUCT = gql`
+  query getProduct($id: ID!) {
+    product(id: $id) {
+      Brand_name
+      IPR
+      Status
+      Number
+      Office
+      Owner
+      Designation
+      Nice_classification
+    }
+  }
+`;
+export { GET_PRODUCTS, GET_PRODUCT };
