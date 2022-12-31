@@ -10,7 +10,7 @@
 </ul>
 
 <h2>Installation</h2>
-<p>To set up the project on your local machine, follow these steps:</p>
+<p>To set up the project on your local machine, follow these steps </p>
 <ol>
   <li>Clone the repository to your local machine:
     <pre><code>git clone https://github.com/your-username/project-name.git</code></pre>
