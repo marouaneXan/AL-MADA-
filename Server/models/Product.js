@@ -3,35 +3,35 @@ const productSchema = mongoose.Schema(
   {
     Brand_name: {
       type: String,
-      required: [true, "Please add a first name field"],
+      required: [true],
     },
     IPR: {
       type: String,
-      required: [true, "Please add a first name field"],
+      required: [true],
     },
     Status: {
       type: String,
-      required: [true, "Please add a first name field"],
+      required: [true],
     },
     Number: {
       type: String,
-      required: [true, "Please add a first name field"],
+      required: [true],
     },
     Office: {
       type: String,
-      required: [true, "Please add a first name field"],
+      required: [true],
     },
     Owner: {
       type: String,
-      required: [true, "Please add a first name field"],
+      required: [true],
     },
     Designation: {
       type: String,
-      required: [true, "Please add a first name field"],
+      required: [true],
     },
     Nice_classification: {
       type: String,
-      required: [true, "Please add a first name field"],
+      required: [true],
     },
   },
   {

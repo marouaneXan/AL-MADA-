@@ -75,9 +75,10 @@ const mutation = new GraphQLObjectType({
       },
     },
     //Update product
-    updateClient: {
+    updateProduct: {
       type: ProductType,
       args: {
+        id: { type: GraphQLNonNull(GraphQLID) },
         Brand_name: { type: GraphQLString },
         IPR: { type: GraphQLString },
         Status: { type: GraphQLString },
