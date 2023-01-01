@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  api:
+    build: ./Server
+    container_name: api-container
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./Server:/app
+      - ./app/node_mudules
